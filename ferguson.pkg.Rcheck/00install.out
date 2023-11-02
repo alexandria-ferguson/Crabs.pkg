@@ -1,0 +1,9 @@
+* installing *source* package ‘ferguson.pkg’ ...
+** using staged installation
+** R
+Error in parse(...) : 
+  /cloud/project/ferguson.pkg/ferguson.pkg.Rcheck/00_pkg_src/ferguson.pkg/R/anova.R:1:6: unexpected symbol
+1: This will
+         ^
+ERROR: unable to collate and parse R files for package ‘ferguson.pkg’
+* removing ‘/cloud/project/ferguson.pkg/ferguson.pkg.Rcheck/ferguson.pkg’

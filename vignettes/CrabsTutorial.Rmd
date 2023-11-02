@@ -1,0 +1,13 @@
+---
+title: "CrabsTutorial"
+author: "Alexandria Ferguson"
+date: "2023-10-31"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This R package is for processing crab data. The functions used are intended to better understand Maryland crabs and allow users to calculate a variety of data. Users should be able to clean their data, make a variety of different plots, as well as manipulate their data in some form or another. Alex Ferguson and Amber Peterson have been working on this R package together.
