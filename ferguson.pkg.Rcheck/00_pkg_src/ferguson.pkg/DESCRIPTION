@@ -17,6 +17,6 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 NeedsCompilation: no
-Packaged: 2023-10-24 19:31:42 UTC; r2159921
+Packaged: 2023-11-09 19:27:55 UTC; r2159921
 Author: Alexandria Ferguson [cre, aut]
 Maintainer: Alexandria Ferguson <alexandria.ferguson@selu.edu>
