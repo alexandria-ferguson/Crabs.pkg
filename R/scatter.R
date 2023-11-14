@@ -13,8 +13,8 @@
 
 
 
-plot <- function(data, column_one, column_two){
-  scatter <- ggplot(data = surveys, mapping = aes(x={{column_one}}, y={{column_two}})) + geom_point()
+scatter_plot <- function(data, column_one, column_two){
+  scatter <- ggplot(data = crabs, mapping = aes(x={{column_one}}, y={{column_two}})) + geom_point()
 return(scatter)
 }
 

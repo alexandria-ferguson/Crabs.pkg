@@ -10,4 +10,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+```{R}
+devtools::install_github("alexandria-ferguson/Crabs.pkg")
+```
+
+In this tutorial we're going to use the crabs data set. 
+
+```{R}
+library(googlesheets4)
+googlesheets4::gs4_deauth()
+crabs <- read_sheet("https://docs.google.com/spreadsheets/d/1aiM8BTWH26rimAvxx64GXLZypfCNgjEAz6r_R52Db90/edit?usp=sharing") 
+
+```
+
 This R package is for processing crab data. The functions used are intended to better understand Maryland crabs and allow users to calculate a variety of data. Users should be able to clean their data, make a variety of different plots, as well as manipulate their data in some form or another. Alex Ferguson and Amber Peterson have been working on this R package together.
+
