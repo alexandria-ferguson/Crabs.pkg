@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{R}
-devtools::install_github("alexandria-ferguson/Crabs.pkg") 
+devtools::install_github("alexandria-ferguson/Crabs.pkg")
 ```
 
 In this tutorial we're going to use the crabs data set. 
