@@ -1,7 +1,7 @@
 Package: ferguson.pkg
 Title: An R package for processing crab data
 Version: 0.1
-Authors@R: c(
+Author: c(
   person(given = "Alexandria", 
           family = "Ferguson",
           role = c("cre", "aut"),
@@ -10,9 +10,10 @@ Authors@R: c(
           c(
   person(given = "Amber", 
           family = "Peterson", 
-          role = c("aut"), 
+          role = c("aut", "cre"), 
           email = "amber.peterson@selu.edu")
           )
+Maintainer: Alexandria Ferguson <alexandria.ferguson@selu.edu>
 Description: This R package is for processing crab data. The functions used are intended to better understand Maryland crabs and allow users to calculate a variety of data. Users should be able to clean their data, make a variety of different plots, as well as manipulate their data in some form or another. 
 License: MIT + file LICENSE
 Depends:
@@ -25,4 +26,3 @@ Suggests:
   rmarkdown
 VignetteBuilder: knitr
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
