@@ -18,3 +18,5 @@ scatter_plot <- function(data, column_one, column_two){
 return(scatter)
 }
 
+
+

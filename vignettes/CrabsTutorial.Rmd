@@ -23,5 +23,64 @@ crabs <- read_sheet("https://docs.google.com/spreadsheets/d/1aiM8BTWH26rimAvxx64
 
 ```
 
-This R package is for processing crab data. The functions used are intended to better understand Maryland crabs and allow users to calculate a variety of data. Users should be able to clean their data, make a variety of different plots, as well as manipulate their data in some form or another. Alex Ferguson and Amber Peterson have been working on this R package together.
+This R package is for processing crab data. The functions used are intended to better understand Maryland crabs and allow users to calculate a variety of data. Users should be able to clean their data, make different plots, as well as manipulate their data in some form or another. Alex Ferguson and Amber Peterson worked on this R package together.
+
+
+
+Remove NAs:
+
+We're first going to use the function remove_nas to ensure that there are no NA values in the dataset. This function is supposed to clean the dataset, so that if other functions are done later then you won't have to worry about having Not Recorded data back. 
+
+
+    remove_nas(crabs)
+
+
+Manipulate Data:
+
+Because the dataset did not contain any NA values to begin with the function let us know that there were No NA values found. 
+
+Now using the function multiply_2, were going to take a numeric column from the dataset, multiply it by 2 and then generate a new column. 
+
+
+    multiply_2(crabs, carapace_length, carapace_length2)
+
+  
+    multiply_2(crabs, color, color2)
+    
+
+If you were to use a non-numeric column such as color, you obviously get back an error message saying there's a nonnumeric argument 
+
+
+Linear Model Summary: 
+
+The next function we're going to use is linear_model which will make a linear model. This helps us to understand the dataset more as we're looking at one or more predictor variables and seeing how they compare to a response variable.  
+
+    linear_model(crabs, "carapace_length", c("sex", "carapace_width"))
+    
+
+
+    linear_model(crabs, "color", c("sex", "carapace_width"))
+
+Scatter Plot: 
+
+We're now going to use scatter_plot which as the name suggests will make a scatter plot using whatever two columns from the dataset you would like. This is nice if you want to see what the relationship between two variables is like. 
+
+
+    scatter_plot(crabs, carapace_length, carapace_width) 
+    
+Bar Graph: 
+
+The last function we'll use is bargraph which again will make a bar graph using whatever two columns you choose. This is useful if you want to compare two different variables.  
+
+
+    bargraph(crabs, carapace_length, carapace_width) 
+
+
+
+
+
+
+
+
+
 

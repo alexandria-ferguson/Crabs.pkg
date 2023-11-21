@@ -1,7 +1,7 @@
 
 #' Make a linear model
 #' 
-#' Use a numeric column and two predictor columns to make a linear model
+#' Use a numeric column and two predictor columns to make a summary table of a linear model
 #' 
 #' @param df This is the dataset
 #' @param dependent This is the numeric dependent column of your choice from the dataset
@@ -22,4 +22,4 @@ linear_model <- function(df, dependent, independent_cols){
 
 #put color where carapace_length is and it will fail 
 
-#linear_model(crabs, "carapace_length", c("sex", "carapace_width"))
+#linear_model(crabs, "carapace_length", c("sex", "carapace_width")) 

@@ -85,29 +85,29 @@ Ferguson</h4>
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"alexandria-ferguson/Crabs.pkg"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
 <pre><code><span><span class="co">## Downloading GitHub repo alexandria-ferguson/Crabs.pkg@HEAD</span></span></code></pre>
-<pre><code><span><span class="co">## rlang     (1.1.1   -&gt; 1.1.2) [CRAN]</span></span>
+<pre><code><span><span class="co">## stringi   (1.7.12  -&gt; 1.8.1) [CRAN]</span></span>
+<span><span class="co">## stringr   (1.5.0   -&gt; 1.5.1) [CRAN]</span></span>
+<span><span class="co">## rlang     (1.1.1   -&gt; 1.1.2) [CRAN]</span></span>
 <span><span class="co">## lifecycle (1.0.3   -&gt; 1.0.4) [CRAN]</span></span>
+<span><span class="co">## dplyr     (1.1.3   -&gt; 1.1.4) [CRAN]</span></span>
 <span><span class="co">## htmltools (0.5.6.1 -&gt; 0.5.7) [CRAN]</span></span>
 <span><span class="co">## xfun      (0.40    -&gt; 0.41 ) [CRAN]</span></span>
 <span><span class="co">## evaluate  (0.22    -&gt; 0.23 ) [CRAN]</span></span></code></pre>
-<pre><code><span><span class="co">## Installing 5 packages: rlang, lifecycle, htmltools, xfun, evaluate</span></span></code></pre>
-<pre><code><span><span class="co">## Installing packages into '/tmp/RtmpKB6SVY/temp_libpath73961692afb'</span></span>
+<pre><code><span><span class="co">## Installing 8 packages: stringi, stringr, rlang, lifecycle, dplyr, htmltools, xfun, evaluate</span></span></code></pre>
+<pre><code><span><span class="co">## Installing packages into '/tmp/RtmpmTYDC9/temp_libpath1302a653a7e'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <pre><code><span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
-<span><span class="co">## * checking for file ‘/tmp/RtmpkjD7q3/remotes100f546f9045/alexandria-ferguson-Crabs.pkg-824ae42/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">## * checking for file ‘/tmp/Rtmp3ygpMZ/remotesbc5801d845/alexandria-ferguson-Crabs.pkg-bdbaf48/DESCRIPTION’ ... OK</span></span>
 <span><span class="co">## * preparing ‘ferguson.pkg’:</span></span>
 <span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
 <span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
 <span><span class="co">## * checking for empty or unneeded directories</span></span>
 <span><span class="co">## * building ‘ferguson.pkg_0.1.tar.gz’</span></span>
 <span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
-<pre><code><span><span class="co">## Installing package into '/tmp/RtmpKB6SVY/temp_libpath73961692afb'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpmTYDC9/temp_libpath1302a653a7e'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
-<pre><code><span><span class="co">## Warning in i.p(...): installation of package</span></span>
-<span><span class="co">## '/tmp/RtmpkjD7q3/file100f6ab31cb/ferguson.pkg_0.1.tar.gz' had non-zero exit</span></span>
-<span><span class="co">## status</span></span></code></pre>
 <p>In this tutorial we’re going to use the crabs data set.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
 <span><span class="fu">googlesheets4</span><span class="fu">::</span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html" class="external-link">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">crabs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/1aiM8BTWH26rimAvxx64GXLZypfCNgjEAz6r_R52Db90/edit?usp=sharing"</span><span class="op">)</span> </span></code></pre></div>
@@ -116,9 +116,48 @@ Ferguson</h4>
 <p>This R package is for processing crab data. The functions used are
 intended to better understand Maryland crabs and allow users to
 calculate a variety of data. Users should be able to clean their data,
-make a variety of different plots, as well as manipulate their data in
-some form or another. Alex Ferguson and Amber Peterson have been working
-on this R package together.</p>
+make different plots, as well as manipulate their data in some form or
+another. Alex Ferguson and Amber Peterson worked on this R package
+together.</p>
+<p>Remove NAs:</p>
+<p>We’re first going to use the function remove_nas to ensure that there
+are no NA values in the dataset. This function is supposed to clean the
+dataset, so that if other functions are done later then you won’t have
+to worry about having Not Recorded data back.</p>
+<pre><code><span><span class="fu"><a href="../reference/remove_nas.html">remove_nas</a></span><span class="op">(</span><span class="va">crabs</span><span class="op">)</span></span></code></pre>
+<p>Manipulate Data:</p>
+<p>Because the dataset did not contain any NA values to begin with the
+function let us know that there were No NA values found.</p>
+<p>Now using the function multiply_2, were going to take a numeric
+column from the dataset, multiply it by 2 and then generate a new
+column.</p>
+<pre><code><span><span class="fu">multiply_2</span><span class="op">(</span><span class="va">crabs</span>, <span class="va">carapace_length</span>, <span class="va">carapace_length2</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">multiply_2</span><span class="op">(</span><span class="va">crabs</span>, <span class="va">color</span>, <span class="va">color2</span><span class="op">)</span></span></code></pre>
+<p>If you were to use a non-numeric column such as color, you obviously
+get back an error message saying there’s a nonnumeric argument</p>
+<p>Linear Model Summary:</p>
+<p>The next function we’re going to use is linear_model which will make
+a linear model. This helps us to understand the dataset more as we’re
+looking at one or more predictor variables and seeing how they compare
+to a response variable.</p>
+<pre><code><span><span class="fu"><a href="../reference/linear_model.html">linear_model</a></span><span class="op">(</span><span class="va">crabs</span>, <span class="st">"carapace_length"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"sex"</span>, <span class="st">"carapace_width"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/linear_model.html">linear_model</a></span><span class="op">(</span><span class="va">crabs</span>, <span class="st">"color"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"sex"</span>, <span class="st">"carapace_width"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>Scatter Plot:</p>
+<p>We’re now going to use scatter_plot which as the name suggests will
+make a scatter plot using whatever two columns from the dataset you
+would like. This is nice if you want to see what the relationship
+between two variables is like.</p>
+<pre><code><span><span class="fu">scatter_plot</span><span class="op">(</span><span class="va">crabs</span>, <span class="va">carapace_length</span>, <span class="va">carapace_width</span><span class="op">)</span> </span></code></pre>
+<p>Bar Graph:</p>
+<p>The last function we’ll use is bargraph which again will make a bar
+graph using whatever two columns you choose. This is useful if you want
+to compare two different variables.</p>
+<pre><code><span><span class="fu"><a href="../reference/bargraph.html">bargraph</a></span><span class="op">(</span><span class="va">crabs</span>, <span class="va">carapace_length</span>, <span class="va">carapace_width</span><span class="op">)</span> </span></code></pre>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -131,7 +170,7 @@ on this R package together.</p>
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Alexandria Ferguson.</p>
+<p>Developed by Amber Peterson.</p>
 </div>
 
 <div class="pkgdown">

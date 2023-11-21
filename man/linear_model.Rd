@@ -17,5 +17,5 @@ linear_model(df, dependent, independent_cols)
 return_summary This should give you the linear model
 }
 \description{
-Use a numeric column and two predictor columns to make a linear model
+Use a numeric column and two predictor columns to make a summary table of a linear model
 }

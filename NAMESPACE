@@ -2,5 +2,6 @@
 
 export(bargraph)
 export(linear_model)
-export(plot)
+export(multiply_2)
 export(remove_nas)
+export(scatter_plot)
